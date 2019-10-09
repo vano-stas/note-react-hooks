@@ -5,6 +5,7 @@ import { firebaseReducer } from './firebaseReducer';
 import { REMOVE_NOTE, SHOW_LOADER, ADD_NOTE, FETCH_NOTES } from '../types';
 
 const url = process.env.REACT_APP_DB_URL;
+// const url = 'https://note-react-hooks.firebaseio.com';
 
 const FirebaseState = ({ children }) => {
 

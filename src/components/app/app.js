@@ -6,6 +6,7 @@ import Navbar from '../navbar';
 import Alert from '../alert/alert';
 import AlertState from '../../context/alert/alertState';
 import FirebaseState from '../../context/firebase/firebaseState';
+import Login from '../../pages/Login';
 
 
 function App () {
@@ -19,6 +20,7 @@ function App () {
                         <Switch>
                             <Route path={'/'} exact component={Home} />
                             <Route path={'/about'} component={About} />
+                            <Route path={'/login'} component={Login} />
                         </Switch>
                         
                     </div>      
