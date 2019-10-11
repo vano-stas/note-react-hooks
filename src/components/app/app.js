@@ -7,6 +7,7 @@ import Alert from '../alert/alert';
 import AlertState from '../../context/alert/alertState';
 import FirebaseState from '../../context/firebase/firebaseState';
 import Login from '../../pages/Login';
+import Registration from '../../pages/Registration';
 
 
 function App () {
@@ -21,6 +22,7 @@ function App () {
                             <Route path={'/'} exact component={Home} />
                             <Route path={'/about'} component={About} />
                             <Route path={'/login'} component={Login} />
+                            <Route path={'/registration'} component={Registration} />
                         </Switch>
                         
                     </div>      

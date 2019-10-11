@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
-import './login-form.scss';
+import './registration-form.scss';
 
-const LoginForm = () => {
+const RegistrationForm = () => {
 
     // const [value, setValue] = useState('');
     // const alert = useContext(AlertContext);
@@ -30,6 +30,12 @@ const LoginForm = () => {
     return (
         <form className='login-form'>
             <div class="form-group row">
+                <label for="inputName" class="col-2 col-form-label">Name</label>
+                <div class="col-10">
+                <input type="email" class="form-control" id="inputName" placeholder="Name" />
+                </div>
+            </div>
+            <div class="form-group row">
                 <label for="inputEmail3" class="col-2 col-form-label">Email</label>
                 <div class="col-10">
                 <input type="email" class="form-control" id="inputEmail3" placeholder="Email" />
@@ -43,45 +49,11 @@ const LoginForm = () => {
             </div>
             <div class="form-group row">
                 <div class="col-sm-10">
-                <button type="submit" class="btn btn-info">Sign in</button>
+                <button type="submit" class="btn btn-info">Sign up</button>
                 </div>
             </div>
         </form>
-
-// {/* <form>
-// <div class="form-group">
-//   <label for="exampleInputEmail1">Email address</label>
-//   <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
-//   <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-// </div>
-// <div class="form-group">
-//   <label for="exampleInputPassword1">Password</label>
-//   <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
-// </div>
-// <div class="form-group form-check">
-//   <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-//   <label class="form-check-label" for="exampleCheck1">Check me out</label>
-// </div>
-// <button type="submit" class="btn btn-primary">Submit</button>
-// </form> */}
-
-        // <form onSubmit={submitHandler}>
-        //     <div className="form-group login-form">
-        //         <input type="text" 
-        //             className="form-control col-4 login-input mb-3 "
-        //             placeholder='email'
-        //             // value={email}
-        //             // onChange={e => setEmail(e.target.value)}
-        //              />
-        //         <input type="text" 
-        //             className="form-control col-4 login-input"
-        //             placeholder='password'
-        //             // value={password}
-        //             // onChange={e => setPassword(e.target.value)}
-        //              />
-        //     </div>
-        // </form></form>
     )
 }
 
-export default LoginForm;
+export default RegistrationForm;
