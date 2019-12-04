@@ -50,9 +50,7 @@ const FirebaseState = ({ children }) => {
             })
         } catch (e) {
             throw new Error(e.message);
-        }
-
-        
+        }  
     }
 
     const removeNote = async id => {

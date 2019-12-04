@@ -1,18 +1,19 @@
 import { SIGN_UP_USER, DELETE_USER, SIGN_IN_USER, LOG_OUT_USER, GET_CURRENT_USER } from "../types";
 
 const handlers = {
-    [SIGN_UP_USER]: state => ({...state, user: payload }),
+    [SIGN_UP_USER]: (state, { payload }) => ({...state, user: payload }),
     [DELETE_USER]: (state, { payload }) => ({
         ...state,
-        notes: [...state.notes, payload]
+        user: null
     }),
-    [SIGN_IN_USER]: (state, { payload }) => ({ ...state, notes: payload, loading: false }),
+    [SIGN_IN_USER]: (state, { payload }) => ({ ...state, user: payload }),
     [LOG_OUT_USER]: (state, { payload }) => ({
         ...state,
-        notes: state.notes.filter(note => note.id !== payload)
+        user: null
     }),
     [GET_CURRENT_USER]: (state, { payload }) => ({
-
+        ...state,
+        user: payload
     }),
     DEFAULT: state => state
 }

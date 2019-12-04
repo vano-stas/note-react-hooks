@@ -8,10 +8,12 @@ import AlertState from '../../context/alert/alertState';
 import FirebaseState from '../../context/firebase/firebaseState';
 import Login from '../../pages/Login';
 import Registration from '../../pages/Registration';
+import AuthAppState from '../../context/auth-app/auth-app-state';
 
 
 function App () {
     return (
+        <AuthAppState>
         <FirebaseState>
             <AlertState>
                 <Router>
@@ -29,6 +31,7 @@ function App () {
                 </Router>
             </AlertState>
         </FirebaseState>
+        </AuthAppState>
         
         
     )
