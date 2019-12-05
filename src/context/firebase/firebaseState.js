@@ -8,7 +8,7 @@ const url = process.env.REACT_APP_DB_URL;
 
 const FirebaseState = ({ children }) => {
 
-    const initialState= {
+    const initialState = {
         notes: [],
         loading: false
     }

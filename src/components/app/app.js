@@ -1,5 +1,9 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
+import thunk from 'redux-thunk';
+
 import Home from '../../pages/home';
 import About from '../../pages/About';
 import Navbar from '../navbar';
@@ -8,12 +12,20 @@ import AlertState from '../../context/alert/alertState';
 import FirebaseState from '../../context/firebase/firebaseState';
 import Login from '../../pages/Login';
 import Registration from '../../pages/Registration';
-import AuthAppState from '../../context/auth-app/auth-app-state';
+import authReducer from '../../store/reducers/auth';
 
 
-function App () {
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+const rootReducer = combineReducers({
+  auth: authReducer
+});
+
+const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)));
+
+function App() {
     return (
-        <AuthAppState>
+        <Provider store={store}>
         <FirebaseState>
             <AlertState>
                 <Router>
@@ -26,14 +38,11 @@ function App () {
                             <Route path={'/login'} component={Login} />
                             <Route path={'/registration'} component={Registration} />
                         </Switch>
-                        
-                    </div>      
+                    </div>
                 </Router>
             </AlertState>
         </FirebaseState>
-        </AuthAppState>
-        
-        
+        </Provider>
     )
 }
 
